@@ -3,6 +3,11 @@ import "./main.css";
 
 class Main extends React.Component {
 
+  state = {
+    temperature: 0,
+    humidity: 0
+  }
+
   render() {
 
     const apiCall = async () => {
@@ -12,8 +17,12 @@ class Main extends React.Component {
             let response = await fetch(URL, {
               'Content-Type': 'application/json'
             });
-            let weatherData = await response.json();
-            console.log(weatherData);
+            let weatherResponse = await response.json();
+            console.log(weatherResponse);
+            this.setState({ 
+              temperature: weatherResponse.main.temp,
+              humidity: weatherResponse.main.humidity
+            });
           } catch (err) {
             console.log(err);
           }
@@ -22,6 +31,13 @@ class Main extends React.Component {
     return (
       <>
         <button onClick={apiCall}>apicall</button>
+
+        <div className="weather-info">
+          <p>temperature: {this.state.temperature}</p>
+          <p>humidity: {this.state.humidity}</p>
+          <p></p>
+          <p></p>
+        </div>
       </>
     );
   }
