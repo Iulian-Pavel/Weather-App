@@ -13,7 +13,7 @@ class Main extends React.Component {
     const apiCall = async () => {
         try {
             let URL =
-              "https://api.openweathermap.org/data/2.5/weather?q=London&appid=a31c2c7beee129eba49814fecf076451";
+              "https://api.openweathermap.org/data/2.5/weather?q=London&units=metric&appid=a31c2c7beee129eba49814fecf076451";
             let response = await fetch(URL, {
               'Content-Type': 'application/json'
             });
