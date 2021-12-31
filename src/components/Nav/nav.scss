@@ -1,0 +1,46 @@
+@import "../../_general";
+@import "../../_mixins";
+
+nav {
+  @include displayFlex(flex, space-around, center, 0);
+  border: 1px solid red;
+  .list-items {
+    @include displayFlex(flex, space-between, center, 0);
+    width: 28%;
+    li {
+      list-style: none;
+      a {
+        color: black;
+        text-decoration: none;
+        font-family: sans-serif;
+      }
+    }
+  }
+  .logo {
+    font-family: sans-serif;
+  }
+  .burger-icon {
+    display: none;
+    cursor: pointer;
+  }
+}
+
+.responsive-nav {
+    height: 100%;
+    z-index: 1;
+    @include displayFlex(0, 0, 0, column);
+    .list-items {
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+  nav {
+    .list-items {
+      display: none;
+    }
+    .burger-icon {
+      display: block;
+    }
+  }
+}
