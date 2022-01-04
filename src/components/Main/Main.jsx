@@ -1,8 +1,6 @@
 import React from "react";
-import { getLocation } from "../../scripts/GetUserLocation";
+import GetUserLocation from "../GetUserLocation/GetUserLocation";
 import "./main.css";
-
-getLocation();
 
 class Main extends React.Component {
   state = {
@@ -36,6 +34,7 @@ class Main extends React.Component {
           <p>temperature: {this.state.temperature}</p>
           <p>humidity: {this.state.humidity}</p>
         </div>
+        <GetUserLocation />
       </>
     );
   }
