@@ -12,7 +12,7 @@ function GetUserLocation() {
     } else {
       checkIfAvailable(false);
     }
-  });
+  }, []);
   return (
     <>
       {isAvailable ? (

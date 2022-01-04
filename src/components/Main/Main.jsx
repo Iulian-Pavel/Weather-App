@@ -33,8 +33,8 @@ class Main extends React.Component {
         <div className="weather-info">
           <p>temperature: {this.state.temperature}</p>
           <p>humidity: {this.state.humidity}</p>
+          <GetUserLocation />
         </div>
-        <GetUserLocation />
       </>
     );
   }
