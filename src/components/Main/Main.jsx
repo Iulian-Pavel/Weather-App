@@ -1,5 +1,4 @@
 import React from "react";
-import GetUserLocation from "../GetUserLocation/GetUserLocation";
 import axios from "axios";
 import "./main.css";
 
@@ -7,6 +6,9 @@ class Main extends React.Component {
   state = {
     temperature: 0,
     humidity: 0,
+    isGeolocationAvailable: false,
+    latitude: 0,
+    longitude: 0
   };
 
   render() {
@@ -25,14 +27,35 @@ class Main extends React.Component {
       }
     };
 
+    const getUserLocation = () => {
+      if('geolocation' in navigator) {
+        this.setState({
+          isGeolocationAvailable: true
+        });
+        navigator.geolocation.getCurrentPosition((position) => {
+          this.setState({
+            latitude: position.coords.latitude,
+            longitude: position.coords.longitude
+          });
+          console.log('latitude is:', this.state.latitude)
+          console.log('longitude is:', this.state.longitude);
+      })
+      }
+    }
+
     return (
       <>
         <button onClick={apiCall}>apicall</button>
+        <button onClick={getUserLocation}>check geolocation</button>
         <div className="weather-info">
           <p>temperature: {this.state.temperature}</p>
           <p>humidity: {this.state.humidity}</p>
-          <GetUserLocation />
         </div>
+        {this.state.isGeolocationAvailable ? (
+            <p>geolocation is available</p>
+        ) : (
+          <p>geolocation is not available</p>
+        )}
       </>
     );
   }
