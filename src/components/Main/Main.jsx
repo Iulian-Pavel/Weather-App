@@ -15,7 +15,7 @@ class Main extends React.Component {
     const apiCall = async () => {
       try {
         let URL =
-          "https://api.openweathermap.org/data/2.5/weather?q=London&units=metric&appid=a31c2c7beee129eba49814fecf076451";
+          `https://api.openweathermap.org/data/2.5/weather?lat=${this.state.latitude}&lon=${this.state.longitude}&units=metric&appid=a31c2c7beee129eba49814fecf076451`;
         const weatherResponse = await axios.get(URL);
         console.log(weatherResponse);
         this.setState({
