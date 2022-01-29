@@ -8,7 +8,7 @@ function Nav() {
   return (
     <>
       <nav className={isActive ? 'responsive-nav' : ''}>
-        <div className="logo">Weather App</div>
+        <div className="logo">Weatherpy</div>
         <ul className="list-items">
           <li>
             <a href="#">Home</a>

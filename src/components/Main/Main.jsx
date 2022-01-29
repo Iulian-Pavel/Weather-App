@@ -8,7 +8,8 @@ class Main extends React.Component {
     humidity: 0,
     isGeolocationAvailable: false,
     latitude: 0,
-    longitude: 0
+    longitude: 0,
+    currentDate: new Date().toLocaleString()
   };
 
   render() {
@@ -45,17 +46,41 @@ class Main extends React.Component {
 
     return (
       <>
-        <button onClick={apiCall}>apicall</button>
+        <div className="date-location">
+          <div className="date">
+          <p className="date-clock">7:10 AM</p>
+          <p className="date-day">Sunday, January 30, 2022</p>
+          </div>
+          <div className="location">
+            <p>Moldova</p>
+            <p>Mingir</p>
+          </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        {/* <button onClick={apiCall}>apicall</button>
         <button onClick={getUserLocation}>check geolocation</button>
         <div className="weather-info">
           <p>temperature: {this.state.temperature}</p>
           <p>humidity: {this.state.humidity}</p>
         </div>
+        <p>Date: {this.state.currentDate}</p>
         {this.state.isGeolocationAvailable ? (
             <p>geolocation is available</p>
         ) : (
           <p>geolocation is not available</p>
-        )}
+        )} */}
       </>
     );
   }

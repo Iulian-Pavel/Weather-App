@@ -3,7 +3,7 @@
 
 nav {
   @include displayFlex(flex, space-around, center, 0);
-  border: 1px solid red;
+  font-family: $defaultFont;
   .list-items {
     @include displayFlex(flex, space-between, center, 0);
     width: 28%;
@@ -12,12 +12,13 @@ nav {
       a {
         color: black;
         text-decoration: none;
-        font-family: sans-serif;
+        font-family: $defaultFont;
       }
     }
   }
   .logo {
-    font-family: sans-serif;
+    font-family: $defaultFont;
+    font-size: 24px;
   }
   .burger-icon {
     display: none;
