@@ -2,12 +2,22 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./main.css";
 import useGeolocation from "../useGeolocation/useGeolocation";
+import bg1 from './images/bg1.jpg';
+import bg2 from './images/bg2.jpg';
+import bg3 from './images/bg3.jpg';
+import bg4 from './images/bg4.jpg';
+
 
 function Main() {
   const [temperature, setTemperature] = useState(0);
   const [humidity, setHumidity] = useState(0);
+  const [country, setCountry] = useState('');
+  const [city, setCity] = useState('');
+  const { latitude, longitude } = useGeolocation();
 
-  const { latitude, longitude} = useGeolocation();
+  const images = [bg1, bg2, bg3, bg4];
+
+  let randomImage = images[Math.floor(Math.random() * images.length)];
 
   const apiCall = async () => {
     try {
@@ -16,20 +26,22 @@ function Main() {
       console.log(weatherResponse);
       setTemperature(weatherResponse.data.main.temp);
       setHumidity(weatherResponse.data.main.humidity);
+      setCountry(weatherResponse.data.sys.country);
+      setCity(weatherResponse.data.name);
     } catch (err) {
       console.log(err);
     }
   };
   return (
     <>
-      <div className="date-location">
+      <div className="date-location" style={{ backgroundImage: `url(${randomImage})` }}>
         <div className="date">
           <p className="date-clock">7:10 AM</p>
           <p className="date-day">Sunday, January 30, 2022</p>
         </div>
         <div className="location">
-          <p>Moldova</p>
-          <p>Mingir</p>
+          <p>{country}</p>
+          <p>{city}</p>
           <button onClick={apiCall}>call</button>
         </div>
       </div>
