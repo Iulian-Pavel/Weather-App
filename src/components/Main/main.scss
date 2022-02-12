@@ -1,17 +1,21 @@
-@import '../../_general';
-@import '../../_mixins';
+@import "../../_general";
+@import "../../_mixins";
 
 .date-location {
-    @include displayFlex(flex, space-between, center, 0);
-    border: 1px solid red;
-    font-family: $defaultFont;
-    .date {
-        margin-left: 2%;
-        .date-clock {
-            font-size: 2vw;
-        }
+  @include displayFlex(flex, space-between, center, 0);
+  border: 1px solid red;
+  font-family: $defaultFont;
+  height: 45vh;
+  background-size: cover;
+  color: white;
+  background-position: 50% 50%;
+  .date {
+    margin-left: 2%;
+    .date-clock {
+      font-size: 2vw;
     }
-    .location {
-        margin-right: 2%;
-    }
+  }
+  .location {
+    margin-right: 2%;
+  }
 }
