@@ -24,6 +24,10 @@ html, body {
           flex-direction: 0;
   border: 1px solid red;
   font-family: "Poppins", sans-serif;
+  height: 45vh;
+  background-size: cover;
+  color: white;
+  background-position: 50% 50%;
 }
 
 .date-location .date {
