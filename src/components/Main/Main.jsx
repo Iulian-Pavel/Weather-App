@@ -6,6 +6,8 @@ import bg1 from './images/bg1.jpg';
 import bg2 from './images/bg2.jpg';
 import bg3 from './images/bg3.jpg';
 import bg4 from './images/bg4.jpg';
+import thermometer from './images/thermometer.png';
+import water_drop from './images/water_drop.png';
 
 
 function Main() {
@@ -47,7 +49,7 @@ function Main() {
         <div className="location">
           <p>{ country }</p>
           <p>{ city }</p>
-          <button onClick={apiCall}>call</button>
+          <button onClick={apiCall}>Check Weather</button>
         </div>
       </div>
 
@@ -63,6 +65,17 @@ function Main() {
         ) : (
           <p>geolocation is not available</p>
         )} */}
+        <div className="weather-display">
+            <div className="temp">
+              <p>{temperature} &#8451;</p>
+              <img src={thermometer} alt="" />
+              <br />
+            </div>
+            <div className="humidity">
+              <p>{humidity}</p>
+              <img src={water_drop} alt="" />
+            </div>
+        </div>
     </>
   );
 }
