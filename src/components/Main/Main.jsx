@@ -13,6 +13,7 @@ function Main() {
   const [humidity, setHumidity] = useState(0);
   const [country, setCountry] = useState('');
   const [city, setCity] = useState('');
+
   const { latitude, longitude } = useGeolocation();
 
   const images = [bg1, bg2, bg3, bg4];
