@@ -20,6 +20,10 @@ function Main() {
 
   let randomImage = images[Math.floor(Math.random() * images.length)];
 
+  let date = new Date();
+  let today = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
+  let time = date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds();
+
   const apiCall = async () => {
     try {
       let URL = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=a31c2c7beee129eba49814fecf076451`;
@@ -37,12 +41,12 @@ function Main() {
     <>
       <div className="date-location" style={{ backgroundImage: `url(${randomImage})` }}>
         <div className="date">
-          <p className="date-clock">7:10 AM</p>
-          <p className="date-day">Sunday, January 30, 2022</p>
+          <p className="date-clock">{ time }</p>
+          <p className="date-day">{ today }</p>
         </div>
         <div className="location">
-          <p>{country}</p>
-          <p>{city}</p>
+          <p>{ country }</p>
+          <p>{ city }</p>
           <button onClick={apiCall}>call</button>
         </div>
       </div>
