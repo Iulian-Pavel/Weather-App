@@ -19,3 +19,19 @@
     margin-right: 2%;
   }
 }
+
+.weather-display {
+  @include displayFlex(flex, space-around, center, 0);
+  width: 100%;
+  border: 1px solid blue;
+  p {
+    font-family: $defaultFont;
+  }
+  img {
+    width: 100px;
+    height: auto;
+  }
+  .temp, .humidity {
+    @include displayFlex(flex, center, center, 0);
+  }
+}
