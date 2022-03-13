@@ -22,7 +22,6 @@ html, body {
   -webkit-box-direction: normal;
       -ms-flex-direction: 0;
           flex-direction: 0;
-  border: 1px solid red;
   font-family: "Poppins", sans-serif;
   height: 45vh;
   background-size: cover;
@@ -56,7 +55,6 @@ html, body {
       -ms-flex-direction: 0;
           flex-direction: 0;
   width: 100%;
-  border: 1px solid blue;
 }
 
 .weather-display p {
