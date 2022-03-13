@@ -3,7 +3,6 @@
 
 .date-location {
   @include displayFlex(flex, space-between, center, 0);
-  border: 1px solid red;
   font-family: $defaultFont;
   height: 45vh;
   background-size: cover;
@@ -23,7 +22,6 @@
 .weather-display {
   @include displayFlex(flex, space-around, center, 0);
   width: 100%;
-  border: 1px solid blue;
   p {
     font-family: $defaultFont;
   }
