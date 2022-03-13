@@ -49,7 +49,7 @@ function Main() {
         <div className="location">
           <p>{ country }</p>
           <p>{ city }</p>
-          <button onClick={apiCall}>Check Weather</button>
+          <button onClick={ apiCall }>Check Weather</button>
         </div>
       </div>
         <div className="weather-display">
