@@ -52,19 +52,6 @@ function Main() {
           <button onClick={apiCall}>Check Weather</button>
         </div>
       </div>
-
-      {/* <button onClick={apiCall}>apicall</button>
-        <button onClick={getUserLocation}>check geolocation</button>
-        <div className="weather-info">
-          <p>temperature: {this.state.temperature}</p>
-          <p>humidity: {this.state.humidity}</p>
-        </div>
-        <p>Date: {this.state.currentDate}</p>
-        {this.state.isGeolocationAvailable ? (
-            <p>geolocation is available</p>
-        ) : (
-          <p>geolocation is not available</p>
-        )} */}
         <div className="weather-display">
             <div className="temp">
               <p>{temperature} &#8451;</p>
