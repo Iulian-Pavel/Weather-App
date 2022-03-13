@@ -27,6 +27,7 @@ html, body {
   background-size: cover;
   color: white;
   background-position: 50% 50%;
+  text-shadow: 2px 2px 2px black;
 }
 
 .date-location .date {
@@ -34,7 +35,7 @@ html, body {
 }
 
 .date-location .date .date-clock {
-  font-size: 2vw;
+  font-size: 4vw;
 }
 
 .date-location .location {
