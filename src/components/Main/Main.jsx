@@ -54,13 +54,13 @@ function Main() {
       </div>
         <div className="weather-display">
             <div className="temp">
-              <p>Temperature: {temperature} &#8451;</p>
-              <img src={thermometer} alt="" />
+              <p>Temperature: { temperature } &#8451;</p>
+              <img src={ thermometer } alt="" />
               <br />
             </div>
             <div className="humidity">
-              <p>Humidity: {humidity}</p>
-              <img src={water_drop} alt="" />
+              <p>Humidity: { humidity }</p>
+              <img src={ water_drop } alt="" />
             </div>
         </div>
     </>
